@@ -7,9 +7,10 @@ import (
 	"flag"
 	"fmt"
 	"math/big"
-	"os"
 	"strconv"
 	"strings"
+
+	"github.com/GeertJohan/go.rice"
 )
 
 func main() {
@@ -47,7 +48,9 @@ func word() string {
 }
 
 func findWord(search string) string {
-	f, err := os.Open("diceware.wordlist.asc")
+	box := rice.MustFindBox("box")
+
+	f, err := box.Open("diceware.wordlist.asc")
 	if err != nil {
 		panic(err)
 	}
