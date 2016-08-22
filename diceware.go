@@ -52,7 +52,7 @@ func word() string {
 func findWord(search string) string {
 	box := rice.MustFindBox("box")
 
-	f, err := box.Open("diceware.wordlist.asc")
+	f, err := box.Open("eff_large_wordlist.txt")
 	if err != nil {
 		panic(err)
 	}
